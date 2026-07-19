@@ -7,10 +7,4 @@ Allow: /
 User-agent: Bingbot
 Allow: /
 
-User-agent: Yeti
-Allow: /
-
-User-agent: OAI-SearchBot
-Allow: /
-
-Sitemap: https://pbn-builder.xyz/sitemap.xml
+Sitemap: https://pbn-builder-web-marketing.link-hub.org/sitemap.xml

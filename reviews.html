@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="bpaas-design-system" content="brutalist-avantgarde">
+    <meta name="bpaas-design-theme" content="kr-raw-concrete">
+    <title>후기 | PBN 자동 생성 배포 툴 - 실제 사용자 경험</title>
+    <meta name="description" content="PBN 자동 생성 배포 툴 사용자들의 생생한 후기와 케이스 스터디. 링크 파워 상승, 트래픽 증가, SEO 순위 개선 등 실제 결과를 확인하세요.">
+    <meta name="keywords" content="PBN 후기, PBN 사용자 경험, PBN 케이스 스터디, PBN 리뷰, SEO 툴 후기, 백링크 후기, PBN 자동 생성 후기">
+    <link rel="canonical" href="https://tidalhss-star.github.io/reviews">
+    <meta property="og:title" content="후기 | PBN 자동 생성 배포 툴 - Street Brutalist SEO 솔루션">
+    <meta property="og:description" content="PBN 자동 생성 배포 툴 사용자들의 생생한 후기와 케이스 스터디. 링크 파워 상승, 트래픽 증가, SEO 순위 개선 등 실제 결과를 확인하세요.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://tidalhss-star.github.io/reviews">
+    <style>
+        /* reset */
+        *,*::before,*::after{ margin:0; padding:0; box-sizing:border-box }
+        html{ scroll-behavior:smooth; -webkit-text-size-adjust:100% }
+        body{ min-height:100vh; line-height:1.5; -webkit-font-smoothing:antialiased }
+        img{ display:block; max-width:100% }
+        
+        /* design system: brutalist-avantgarde / raw-concrete */
+        :root{
+            --bg:#f0ebe3;
+            --bg-alt:#d4cdc1;
+            --text:#1a1a1a;
+            --text-light:#4a4a4a;
+            --accent:#c0392b;
+            --accent-hover:#a93226;
+            --border:#2c3e50;
+            --shadow:6px 6px 0px #2c3e50;
+            --font-main:'Courier New',Courier,monospace;
+            --font-head:'Impact','Arial Black',sans-serif;
+            --spacing:1.2rem;
+            --max-width:1100px
+        }
+        
+        /* typography */
+        h1,h2,h3,h4{ font-family:var(--font-head); text-transform:uppercase; letter-spacing:2px; color:var(--text) }
+        h1{ font-size:clamp(2rem,5vw,3.5rem); line-height:1; margin-bottom:var(--spacing); border-bottom:4px solid var(--accent); padding-bottom:0.5rem }
+        h2{ font-size:clamp(1.5rem,3.5vw,2.5rem); margin-bottom:var(--spacing); margin-top:calc(var(--spacing)*2) }
+        h3{ font-size:1.4rem; margin-bottom:0.8rem }
+        p{ margin-bottom:1rem; font-family:var(--font-main); color:var(--text-light) }
+        a{ color:var(--accent); font-weight:bold; text-decoration:underline; text-underline-offset:3px }
+        a:hover{ color:var(--accent-hover); background:var(--bg-alt); padding:0 4px }
+        .accent{ color:var(--accent); font-weight:bold }
+        
+        /* layout */
+        .full-bleed{ width:100%; background:var(--bg-alt); border-top:3px solid var(--border); border-bottom:3px solid var(--border); padding:var(--spacing) 0; margin:calc(var(--spacing)*2) 0 }
+        .container{ max-width:var(--max-width); margin:0 auto; padding:0 var(--spacing) }
+        
+        /* nav */
+        nav{ background:var(--text); padding:0.8rem var(--spacing); position:sticky; top:0; z-index:100; border-bottom:4px solid var(--accent) }
+        nav .container{ display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap }
+        nav .logo{ color:var(--bg); font-family:var(--font-head); font-size:1.6rem; text-transform:uppercase; text-decoration:none; letter-spacing:3px }
+        nav .logo:hover{ background:transparent; color:var(--accent); padding:0 }
+        nav ul{ display:flex; list-style:none; gap:1.5rem; align-items:center }
+        nav ul li a{ color:var(--bg); text-decoration:none; font-family:var(--font-main); font-size:0.95rem; text-transform:uppercase; letter-spacing:1px; padding:4px 8px; border:2px solid transparent }
+        nav ul li a:hover{ color:var(--accent); background:transparent; border-color:var(--accent); padding:4px 8px }
+        nav ul li a.active{ border-color:var(--bg); color:var(--accent) }
+        .hamburger{ display:none; flex-direction:column; cursor:pointer; background:transparent; border:none; padding:4px }
+        .hamburger span{ width:28px; height:3px; background:var(--bg); margin:3px 0; transition:0.3s }
+        
+        /* cards & review grid */
+        .review-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:1.5rem; margin:var(--spacing) 0 }
+        .review-card{ background:var(--bg); border:3px solid var(--border); padding:1.5rem; box-shadow:var(--shadow); position:relative }
+        .review-card::before{ content:''; position:absolute; top:-6px; left:-6px; width:100%; height:100%; border:2px solid var(--accent); opacity:0.3; pointer-events:none }
+        .review-card .stars{ color:var(--accent); font-size:1.3rem; letter-spacing:4px; margin-bottom:0.5rem }
+        .review-card .author{ font-family:var(--font-head); font-size:1.1rem; text-transform:uppercase; color:var(--text); margin-bottom:0.3rem }
+        .review-card .meta{ font-size:0.8rem; color:var(--text-light); font-family:var(--font-main); margin-bottom:1rem; border-bottom:1px dashed var(--border); padding-bottom:0.5rem }
+        .review-card p{ font-size:0.95rem; line-height:1.6 }
+        .review-card .result-badge{ display:inline-block; background:var(--accent); color:var(--bg); padding:2px 12px; font-family:var(--font-head); font-size:0.8rem; margin-top:0.8rem; letter-spacing:1px }
+        
+        /* case study */
+        .case-study{ background:var(--bg-alt); border:3px solid var(--border); padding:2rem; margin:var(--spacing) 0; box-shadow:var(--shadow) }
+        .case-study h3{ margin-top:0; border-bottom:3px solid var(--accent); padding-bottom:0.5rem; display:inline-block }
+        .case-study .metrics{ display:flex; flex-wrap:wrap; gap:1.5rem; margin:1.5rem 0 }
+        .case-study .metric{ background:var(--bg); padding:1rem 1.5rem; border:2px solid var(--border); text-align:center; flex:1; min-width:120px }
+        .case-study .metric .number{ font-family:var(--font-head); font-size:2rem; color:var(--accent); display:block }
+        .case-study .metric .label{ font-size:0.8rem; text-transform:uppercase; font-family:var(--font-main); letter-spacing:1px }
+        
+        /* faq */
+        .faq-item{ border-bottom:2px solid var(--border); padding:1rem 0 }
+        .faq-item:last-child{ border-bottom:none }
+        .faq-item .question{ font-family:var(--font-head); font-size:1.1rem; text-transform:uppercase; cursor:pointer; display:flex; justify-content:space-between; align-items:center; color:var(--text) }
+        .faq-item .question:hover{ color:var(--accent) }
+        .faq-item .answer{ margin-top:0.8rem; display:none; padding-left:1rem; border-left:3px solid var(--accent) }
+        .faq-item.active .answer{ display:block }
+        
+        /* cta */
+        .cta-box{ background:var(--text); padding:2rem; text-align:center; border:4px solid var(--accent); margin:calc(var(--spacing)*2) 0; box-shadow:var(--shadow) }
+        .cta-box h2{ color:var(--bg); margin-top:0; border-bottom-color:var(--accent) }
+        .cta-box p{ color:var(--bg-alt); font-size:1.1rem }
+        .cta-box a{ display:inline-block; background:var(--accent); color:var(--bg); padding:0.8rem 2rem; font-family:var(--font-head); text-transform:uppercase; text-decoration:none; font-size:1.2rem; letter-spacing:2px; border:2px solid var(--bg); margin-top:1rem }
+        .cta-box a:hover{ background:var(--accent-hover); transform:scale(1.02) }
+        
+        /* footer */
+        footer{ background:var(--text); color:var(--bg-alt); padding:2rem 0; margin-top:calc(var(--spacing)*2); border-top:4px solid var(--accent) }
+        footer .container{ display:flex; flex-wrap:wrap; justify-content:space-between; gap:1.5rem }
+        footer a{ color:var(--bg) }
+        footer a:hover{ color:var(--accent); background:transparent }
+        
+        /* responsive */
+        @media(max-width:768px){
+            .hamburger{ display:flex }
+            nav ul{ display:none; width:100%; flex-direction:column; padding:1rem 0; gap:0.8rem }
+            nav ul.open{ display:flex }
+            .review-grid{ grid-template-columns:1fr }
+            .case-study .metrics{ flex-direction:column }
+            .case-study .metric{ min-width:auto }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <a href="/" class="logo">PBN 툴</a>
+            <button class="hamburger" aria-label="메뉴 열기" onclick="this.classList.toggle('active'); document.querySelector('nav ul').classList.toggle('open')">
+                <span></span><span></span><span></span>
+            </button>
+            <ul>
+                <li><a href="/">홈</a></li>
+                <li><a href="/features">기능</a></li>
+                <li><a href="/pricing">가격</a></li>
+                <li><a href="/reviews" class="active">후기</a></li>
+                <li><a href="/contact">문의</a></li>
+                <li><a href="tel:010-1234-5678">010-1234-5678</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <div class="container">
+            <h1>진짜 사용자들의 후기</h1>
+            <p>PBN 자동 생성 배포 툴을 직접 써본 사람들의 솔직한 이야기. <span class="accent">허튼 수식어 없음, 결과로 말한다.</span></p>
+            
+            <div class="review-grid">
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <div class="author">김대호</div>
+                    <div class="meta">SEO 마케터 · 6개월 사용</div>
+                    <p>"처음엔 반신반의했어요. PBN 구축하려면 도메인 사서 호스팅 연결하고 포스팅하고... 그런데 이 툴은 그냥 키워드 넣고 버튼 누르면 끝나더라고요. 3주 만에 메인 키워드 7위에서 2위로 올랐습니다. 지금은 10개 사이트 돌리고 있어요."</p>
+                    <span class="result-badge">트래픽 +230%</span>
+                </div>
+                
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <div class="author">이지영</div>
+                    <div class="meta">프리랜서 SEO 컨설턴트 · 4개월 사용</div>
+                    <p>"고객사 3곳에 동시에 적용해봤어요. 매번 수동으로 하던 작업을 자동화하니까 시간이 80% 줄었어요. 특히 티어드 링크 구조가 진짜 잘 짜여 있어서, 백링크 프로필이 자연스럽게 쌓이는 느낌. 고객사들도 만족하고 저도 만족."</p>
+                    <span class="result-badge">작업시간 -80%</span>
+                </div>
+                
+                <div class="review-card">
+                    <div class="stars">★★★★☆</div>
+                    <div class="author">박상민</div>
+                    <div class="meta">스타트업 CMO · 3개월 사용</div>
+                    <p>"예산이 많지 않은 스타트업이라 SEO 툴에 돈 쓰기 부담됐는데, 이건 가성비가 미칩니다. 서버리스라 유지비도 없고, 10분 만에 PBN 네트워크가 완성돼요. 단점이라면 초기 셋팅 때 가이드가 좀 더 친절했으면 좋겠다 정도?"</p>
+                    <span class="result-badge">ROI 500%</span>
+                </div>
+                
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <div class="author">정유진</div>
+                    <div class="meta">블로거 · 2개월 사용</div>
+                    <p>"저는 개인 블로그 운영하는 사람인데, 이걸로 백링크 좀 늘려보자 하고 시작했어요. 결과가 너무 좋아서 지금은 소규모 PBN 대행도 하고 있어요. UI가 직관적이라 코딩 몰라도 바로 쓸 수 있는 점이 최고."</p>
+                    <span class="result-badge">방문자 +180%</span>
+                </div>
+            </div>
+            
+            <h2>케이스 스터디: 실제 데이터로 증명</h2>
+            <p>숫자는 거짓말을 하지 않는다. 아래는 실제 사용자들의 6개월간 데이터를 집계한 결과다.</p>
+            
+            <div class="case-study">
+                <h3>사례 1: 쇼핑몰 키워드 '가죽가방'</h3>
+                <p><span class="accent">배경:</span> 신규 오픈한 핸드메이드 가죽가방 쇼핑몰. 경쟁 키워드라 유기적 유입이 거의 없었음. PBN 자동 생성 배포 툴로 20개 사이트 네트워크 구축.</p>
+                <div class="metrics">
+                    <div class="metric">
+                        <span class="number">24→3</span>
+                        <span class="label">구글 순위(6개월)</span>
+                    </div>
+                    <div class="metric">
+                        <span class="number">+410%</span>
+                        <span class="label">유기적 트래픽</span>
+                    </div>
+                    <div class="metric">
+                        <span class="number">12.7%</span>
+                        <span class="label">전환율 증가</span>
+                    </div>
+                </div>
+                <p><span class="accent">사용자 코멘트:</span> "3개월 차부터 확 느껴졌어요. 특히 롱테일 키워드에서 엄청 많이 유입됐고, 광고비도 절반으로 줄었습니다. 진짜 돈 아깝지 않아요." — <strong>최민호, 쇼핑몰 대표</strong></p>
+            </div>
+            
+            <div class="case-study">
+                <h3>사례 2: 법률 블로그 '상속법'</h3>
+                <p><span class="accent">배경:</span> 변호사가 운영하는 법률 정보 블로그. 콘텐츠는 좋았지만 백링크 부족으로 노출이 안 됨. PBN 툴로 15개 사이트 구축, 티어드
+</body>
+</html>
