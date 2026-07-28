@@ -113,87 +113,9 @@
     </style>
 </head>
 <body>
-    <nav>
-        <div class="container">
-            <a href="/" class="logo">PBN 툴</a>
-            <button class="hamburger" aria-label="메뉴 열기" onclick="this.classList.toggle('active'); document.querySelector('nav ul').classList.toggle('open')">
-                <span></span><span></span><span></span>
-            </button>
-            <ul>
-                <li><a href="/">홈</a></li>
-                <li><a href="/features">기능</a></li>
-                <li><a href="/pricing">가격</a></li>
-                <li><a href="/reviews" class="active">후기</a></li>
-                <li><a href="/contact">문의</a></li>
-                <li><a href="tel:010-1234-5678">010-1234-5678</a></li>
-            </ul>
-        </div>
-    </nav>
 
-    <main>
-        <div class="container">
-            <h1>진짜 사용자들의 후기</h1>
-            <p>PBN 자동 생성 배포 툴을 직접 써본 사람들의 솔직한 이야기. <span class="accent">허튼 수식어 없음, 결과로 말한다.</span></p>
-            
-            <div class="review-grid">
-                <div class="review-card">
-                    <div class="stars">★★★★★</div>
-                    <div class="author">김대호</div>
-                    <div class="meta">SEO 마케터 · 6개월 사용</div>
-                    <p>"처음엔 반신반의했어요. PBN 구축하려면 도메인 사서 호스팅 연결하고 포스팅하고... 그런데 이 툴은 그냥 키워드 넣고 버튼 누르면 끝나더라고요. 3주 만에 메인 키워드 7위에서 2위로 올랐습니다. 지금은 10개 사이트 돌리고 있어요."</p>
-                    <span class="result-badge">트래픽 +230%</span>
-                </div>
-                
-                <div class="review-card">
-                    <div class="stars">★★★★★</div>
-                    <div class="author">이지영</div>
-                    <div class="meta">프리랜서 SEO 컨설턴트 · 4개월 사용</div>
-                    <p>"고객사 3곳에 동시에 적용해봤어요. 매번 수동으로 하던 작업을 자동화하니까 시간이 80% 줄었어요. 특히 티어드 링크 구조가 진짜 잘 짜여 있어서, 백링크 프로필이 자연스럽게 쌓이는 느낌. 고객사들도 만족하고 저도 만족."</p>
-                    <span class="result-badge">작업시간 -80%</span>
-                </div>
-                
-                <div class="review-card">
-                    <div class="stars">★★★★☆</div>
-                    <div class="author">박상민</div>
-                    <div class="meta">스타트업 CMO · 3개월 사용</div>
-                    <p>"예산이 많지 않은 스타트업이라 SEO 툴에 돈 쓰기 부담됐는데, 이건 가성비가 미칩니다. 서버리스라 유지비도 없고, 10분 만에 PBN 네트워크가 완성돼요. 단점이라면 초기 셋팅 때 가이드가 좀 더 친절했으면 좋겠다 정도?"</p>
-                    <span class="result-badge">ROI 500%</span>
-                </div>
-                
-                <div class="review-card">
-                    <div class="stars">★★★★★</div>
-                    <div class="author">정유진</div>
-                    <div class="meta">블로거 · 2개월 사용</div>
-                    <p>"저는 개인 블로그 운영하는 사람인데, 이걸로 백링크 좀 늘려보자 하고 시작했어요. 결과가 너무 좋아서 지금은 소규모 PBN 대행도 하고 있어요. UI가 직관적이라 코딩 몰라도 바로 쓸 수 있는 점이 최고."</p>
-                    <span class="result-badge">방문자 +180%</span>
-                </div>
-            </div>
-            
-            <h2>케이스 스터디: 실제 데이터로 증명</h2>
-            <p>숫자는 거짓말을 하지 않는다. 아래는 실제 사용자들의 6개월간 데이터를 집계한 결과다.</p>
-            
-            <div class="case-study">
-                <h3>사례 1: 쇼핑몰 키워드 '가죽가방'</h3>
-                <p><span class="accent">배경:</span> 신규 오픈한 핸드메이드 가죽가방 쇼핑몰. 경쟁 키워드라 유기적 유입이 거의 없었음. PBN 자동 생성 배포 툴로 20개 사이트 네트워크 구축.</p>
-                <div class="metrics">
-                    <div class="metric">
-                        <span class="number">24→3</span>
-                        <span class="label">구글 순위(6개월)</span>
-                    </div>
-                    <div class="metric">
-                        <span class="number">+410%</span>
-                        <span class="label">유기적 트래픽</span>
-                    </div>
-                    <div class="metric">
-                        <span class="number">12.7%</span>
-                        <span class="label">전환율 증가</span>
-                    </div>
-                </div>
-                <p><span class="accent">사용자 코멘트:</span> "3개월 차부터 확 느껴졌어요. 특히 롱테일 키워드에서 엄청 많이 유입됐고, 광고비도 절반으로 줄었습니다. 진짜 돈 아깝지 않아요." — <strong>최민호, 쇼핑몰 대표</strong></p>
-            </div>
-            
-            <div class="case-study">
-                <h3>사례 2: 법률 블로그 '상속법'</h3>
-                <p><span class="accent">배경:</span> 변호사가 운영하는 법률 정보 블로그. 콘텐츠는 좋았지만 백링크 부족으로 노출이 안 됨. PBN 툴로 15개 사이트 구축, 티어드
+<main class='container'><section><h1>PBN 자동 생성 배포 툴 도입 전 확인할 평가 기준</h1><p>PBN 자동 생성 배포 툴을 검토할 때는 개별 후기나 평점보다 실제 운영에 필요한 기능이 갖춰져 있는지를 기준으로 판단하는 경우가 많습니다. 아래 항목은 담당자들이 도입 검토 단계에서 일반적으로 확인하는 평가 기준을 정리한 것입니다.</p><div class='full-bleed'><div class='review-grid'><div class='review-card'><h3>생성 속도</h3><p class='meta'>콘텐츠 생성부터 배포까지 걸리는 처리 시간과 대량 작업 시 안정성을 확인합니다.</p></div><div class='review-card'><h3>배포 자동화 범위</h3><p class='meta'>여러 도메인에 걸쳐 반복 배포가 자동으로 이루어지는지, 수동 개입이 필요한 구간은 어디인지 확인합니다.</p></div><div class='review-card'><h3>콘텐츠 다양성</h3><p class='meta'>생성되는 글의 주제와 구성이 일정 수준 다양하게 유지되는지 확인합니다.</p></div><div class='review-card'><h3>관리 대시보드</h3><p class='meta'>등록된 사이트 목록과 배포 상태를 한 화면에서 파악할 수 있는지 확인합니다.</p></div><div class='review-card'><h3>계정 및 보안 분리</h3><p class='meta'>사이트별 계정과 권한이 분리되어 관리되는지 확인합니다.</p></div><div class='review-card'><h3>지원 채널</h3><p class='meta'>문의 및 기술 지원 채널이 마련되어 있는지 확인합니다.</p></div></div></div><h2>자주 묻는 질문</h2><div class='faq-item'><p class='question'>도입 전 상담이 가능한가요?</p><p class='answer'>문의 접수 후 담당자를 통해 도입 상담을 진행할 수 있습니다.</p></div><div class='faq-item'><p class='question'>기존에 운영하던 도메인도 연동할 수 있나요?</p><p class='answer'>기존 도메인 연동 가능 여부는 운영 환경에 따라 다르므로 별도 확인이 필요합니다.</p></div><div class='faq-item'><p class='question'>배포 이후 콘텐츠 수정도 지원되나요?</p><p class='answer'>배포 이후 콘텐츠 수정 및 관리 기능은 도구 내 관리 화면에서 확인할 수 있습니다.</p></div><div class='cta-box'><p class='accent'>추가로 확인하고 싶은 사항이 있다면 아래 연락처로 문의할 수 있습니다.</p><a href='tel:010-1234-5678'>010-1234-5678</a></div></section></main>
+
+
 </body>
 </html>
