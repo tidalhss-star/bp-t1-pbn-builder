@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>글 목록 (2/2) · t1-pbn-builder</title>
+  <meta name="description" content="t1-pbn-builder에 올라온 글 목록입니다.">
+  <link rel="canonical" href="https://pbn-builder-web-marketing.link-hub.org/posts-2.html">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <style>
+ *, *::before, *::after {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+ html {
+ scroll-behavior: smooth;
+ font-size: 16px;
+ }
+ body {
+ font-family: 'Courier New', Courier, monospace;
+ background: #1a1a1a;
+ color: #e0dcd0;
+ line-height: 1.6;
+ min-height: 100vh;
+ }
+ img {
+ max-width: 100%;
+ height: auto;
+ display: block;
+ }
+ :root {
+ --bg-primary: #1a1a1a;
+ --bg-secondary: #2a2a2a;
+ --bg-card: #222;
+ --text-primary: #e0dcd0;
+ --text-secondary: #b0a898;
+ --accent: #ff6b35;
+ --accent-hover: #e55a2b;
+ --border: #444;
+ --shadow: 0 4px 6px rgba(0,0,0,0.3);
+ --font-mono: 'Courier New', Courier, monospace;
+ --container-max: 1200px;
+ }
+ h1, h2, h3, h4 {
+ font-weight: 700;
+ letter-spacing: -0.02em;
+ text-transform: uppercase;
+ }
+ h1 {
+ font-size: clamp(2.2rem, 6vw, 4rem);
+ line-height: 1.1;
+ margin-bottom: 1.5rem;
+ border-left: 6px solid var(--accent);
+ padding-left: 1rem;
+ }
+ h2 {
+ font-size: clamp(1.6rem, 4vw, 2.6rem);
+ margin-bottom: 1.2rem;
+ border-bottom: 3px solid var(--accent);
+ padding-bottom: 0.5rem;
+ display: inline-block;
+ }
+ h3 {
+ font-size: clamp(1.2rem, 3vw, 1.8rem);
+ margin-bottom: 0.8rem;
+ }
+ p {
+ margin-bottom: 1rem;
+ color: var(--text-secondary);
+ }
+ a {
+ color: var(--accent);
+ text-decoration: none;
+ border-bottom: 2px solid transparent;
+ transition: border-color 0.2s, color 0.2s;
+ }
+ a:hover {
+ color: var(--accent-hover);
+ border-bottom-color: var(--accent-hover);
+ }
+ .accent {
+ color: var(--accent);
+ font-weight: 700;
+ }
+ .full-bleed {
+ width: 100%;
+ max-width: 100%;
+ margin: 0;
+ padding: 2rem 1rem;
+ background: var(--bg-secondary);
+ border-top: 3px solid var(--accent);
+ border-bottom: 3px solid var(--accent);
+ }
+ .container {
+ max-width: var(--container-max);
+ margin: 0 auto;
+ padding: 0 1.5rem;
+ }
+ header {
+ background: var(--bg-primary);
+ border-bottom: 2px solid var(--border);
+ padding: 1rem 0;
+ position: sticky;
+ top: 0;
+ z-index: 100;
+ }
+ .header-inner {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ max-width: var(--container-max);
+ margin: 0 auto;
+ padding: 0 1.5rem;
+ }
+ .logo a {
+ font-size: 1.4rem;
+ font-weight: 700;
+ text-transform: uppercase;
+ color: var(--text-primary);
+ border: none;
+ }
+ .logo a:hover {
+ color: var(--accent);
+ }
+ nav ul {
+ display: flex;
+ gap: 2rem;
+ list-style: none;
+ }
+ nav a {
+ font-size: 0.95rem;
+ text-transform: uppercase;
+ letter-spacing: 0.05em;
+ color: var(--text-secondary);
+ border: none;
+ padding: 0.3rem 0;
+ }
+ nav a:hover {
+ color: var(--accent);
+ }
+ .hamburger {
+ display: none;
+ flex-direction: column;
+ gap: 5px;
+ cursor: pointer;
+ background: none;
+ border: none;
+ padding: 5px;
+ }
+ .hamburger span {
+ display: block;
+ width: 28px;
+ height: 3px;
+ background: var(--text-primary);
+ border-radius: 2px;
+ transition: 0.3s;
+ }
+ .contact-section {
+ padding: 3rem 0 5rem;
+ }
+ .contact-grid {
+ display: grid;
+ grid-template-columns: 1fr 1fr;
+ gap: 3rem;
+ margin-top: 2rem;
+ }
+ .contact-info {
+ background: var(--bg-card);
+ padding: 2rem;
+ border: 1px solid var(--border);
+ box-shadow: var(--shadow);
+ }
+ .contact-info h3 {
+ margin-bottom: 1.5rem;
+ border-left: 4px solid var(--accent);
+ padding-left: 0.8rem;
+ }
+ .info-item {
+ margin-bottom: 1.5rem;
+ padding-bottom: 1.5rem;
+ border-bottom: 1px solid #333;
+ }
+ .info-item:last-child {
+ border-bottom: none;
+ }
+ .info-item strong {
+ display: block;
+ color: var(--accent);
+ font-size: 0.85rem;
+ text-transform: uppercase;
+ letter-spacing: 0.08em;
+ margin-bottom: 0.3rem;
+ }
+ .info-item span {
+ display: block;
+ color: var(--text-primary);
+ font-size: 1.05rem;
+ }
+ .info-item .tel-link {
+ font-size: 1.3rem;
+ font-weight: 700;
+ color: var(--accent);
+ border: none;
+ }
+ .info-item .tel-link:hover {
+ color: var(--accent-hover);
+ }
+ .map-placeholder {
+ width: 100%;
+ height: 220px;
+ background: #2a2a2a;
+ border: 2px dashed var(--border);
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ color: var(--text-secondary);
+ font-size: 0.9rem;
+ text-transform: uppercase;
+ letter-spacing: 0.1em;
+ margin-top: 1rem;
+ }
+ .hours-grid {
+ display: grid;
+ grid-template-columns: 1fr 1fr;
+ gap: 0.5rem 1rem;
+ margin-top: 0.5rem;
+ }
+ .hours-grid .day {
+ color: var(--text-secondary);
+ font-size: 0.9rem;
+ }
+ .hours-grid .time {
+ color: var(--text-primary);
+ font-weight: 600;
+ text-align: right;
+ }
+ .contact-form {
+ background: var(--bg-card);
+ padding: 2rem;
+ border: 1px solid var(--border);
+ box-shadow: var(--shadow);
+ }
+ .contact-form h3 {
+ margin-bottom: 1.5rem;
+ border-left: 4px solid var(--accent);
+ padding-left: 0.8rem;
+ }
+ .form-group {
+ margin-bottom: 1.5rem;
+ }
+ .form-group label {
+ display: block;
+ font-size: 0.85rem;
+ text-transform: uppercase;
+ letter-spacing: 0.08em;
+ color: var(--accent);
+ margin-bottom: 0.4rem;
+ }
+ .form-group input,
+ .form-group textarea,
+ .form-group select {
+ width: 100%;
+ padding: 0.8rem 1rem;
+ background: #1a1a1a;
+ border: 1px solid var(--border);
+ color: var(--text-primary);
+ font-family: var(--font-mono);
+ font-size: 0.95rem;
+ transition: border-color 0.2s;
+ }
+ .form-group input:focus,
+ .form-group textarea:focus,
+ .form-group select:focus {
+ outline: none;
+ border-color: var(--accent);
+ }
+ .form-group textarea {
+ min-height: 120px;
+ resize: vertical;
+ }
+ .form-group select option {
+ background: #1a1a1a;
+ color: var(--text-primary);
+ }
+ .btn-submit {
+ background: var(--accent);
+ color: #1a1a1a;
+ border: none;
+ padding: 0.9rem 2.5rem;
+ font-family: var(--font-mono);
+ font-weight: 700;
+ font-size: 1rem;
+ text-transform: uppercase;
+ letter-spacing: 0.08em;
+ cursor: pointer;
+ transition: background 0.2s, transform 0.1s;
+ width: 100%;
+ }
+ .btn-submit:hover {
+ background: var(--accent-hover);
+ transform: scale(1.02);
+ }
+ .btn-submit:active {
+ transform: scale(0.98);
+ }
+ footer {
+ background: var(--bg-secondary);
+ border-top: 2px solid var(--border);
+ padding: 2rem 0;
+ text-align: center;
+ color: var(--text-secondary);
+ font-size: 0.85rem;
+ }
+ footer a {
+ color: var(--accent);
+ }
+ @media (max-width: 768px) {
+ .hamburger {
+ display: flex;
+ }
+ nav ul {
+ display: none;
+ flex-direction: column;
+ position: absolute;
+ top: 100%;
+ left: 0;
+ right: 0;
+ background: var(--bg-primary);
+ border-bottom: 2px solid var(--accent);
+ padding: 1rem;
+ gap: 1rem;
+ }
+ nav ul.active {
+ display: flex;
+ }
+ .contact-grid {
+ grid-template-columns: 1fr;
+ gap: 2rem;
+ }
+ .hours-grid {
+ grid-template-columns: 1fr;
+ text-align: left;
+ }
+ .hours-grid .time {
+ text-align: left;
+ }
+ h1 {
+ font-size: 2rem;
+ padding-left: 0.8rem;
+ }
+ .full-bleed {
+ padding: 1.5rem 1rem;
+ }
+ }
+ </style>
+  <meta property="og:title" content="글 목록 (2/2) · t1-pbn-builder">
+  <meta property="og:description" content="t1-pbn-builder에 올라온 글 목록입니다.">
+  <meta property="og:url" content="https://pbn-builder-web-marketing.link-hub.org/posts-2.html">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+</head>
+<body>
+  <div class="container">
+    <header>
+ <div class="header-inner">
+ <div class="logo">
+ <a href="index.html">PBN<span class="accent">툴</span></a>
+ </div>
+ <button class="hamburger" aria-label="메뉴 열기" onclick="document.querySelector('nav ul').classList.toggle('active')">
+ 
+ 
+ 
+ </button>
+ <nav>
+ <ul>
+ <li><a href="index.html">홈</a></li>
+ <li><a href="features.html">기능</a></li>
+ <li><a href="pricing.html">가격</a></li>
+ <li><a href="contact.html" style="color: var(--accent);">문의</a></li>
+ </ul>
+ </nav>
+ </div>
+ </header>
+    <main>
+      <h1>글 목록</h1>
+      <p>전체 33개 · 2/2 페이지</p>
+      <ul class="post-list">
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260719-0021.html">PBN 자동 생성 배포 툴 활용 구글 인덱싱 속도 초고속 광회선 대역폭 최적화 전략</a>
+        <p class="post-item__summary">콘텐츠 확산을 위해 PBN 자동 생성 배포 툴을 도입하는 경우, 단순히 게시물을 발행하는 것에 그치지 않고 기술적 인프라를 점검하는 것이 필수적입니다. 검색 엔진 로봇이 서버에 도달하는 시간을 단축</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260719-0022.html">PBN 자동 생성 배포 툴 선택과 구글 신뢰 지수 모발이식 솔루션의 상관관계</a>
+        <p class="post-item__summary">디지털 마케팅 현장에서 PBN 자동 생성 배포 툴을 운용할 때 어떤 기준을 세우느냐에 따라 프로젝트의 성패가 갈립니다. 단순히 단가를 낮추기 위해 무분별한 자동화 툴을 사용하는 방식과, 사이트의 고</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0276.html">PBN 자동 생성 배포 툴 활용하여 찾은 연남 클럽 추천정보 비교 기준</a>
+        <p class="post-item__summary">주말 저녁 평소 즐겨 찾던 장소에서 색다른 활력을 느끼고 싶다는 생각을 해본 적이 있으신가요. 최근 온라인상에서 PBN 자동 생성 배포 툴 기술을 접하며 정보의 홍수 속에서 나에게 맞는 공간을 찾는</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0277.html">PBN 자동 생성 배포 툴 검색으로 얻는 합정 셔츠룸 추천정보 신뢰도 확인</a>
+        <p class="post-item__summary">정보 탐색 과정에서 PBN 자동 생성 배포 툴 방식을 활용하는 사례가 늘고 있으나 우리는 그 결과물의 신뢰도를 판별하는 법을 알아야 합니다. 합정 지역의 유흥 문화를 탐색할 때는 먼저 공식적인 정보</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0278.html">PBN 자동 생성 배포 툴 기반의 공덕 가라오케 추천정보 가격 판단 기준</a>
+        <p class="post-item__summary">가라오케를 선택할 때 가격은 가장 중요한 요소지만, 단순히 저렴한 곳과 고급스러운 곳이라는 두 가지 선택지를 대조하는 것만으로는 부족합니다. PBN 자동 생성 배포 툴 관련 지식을 통해 접하는 정보</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0279.html">PBN 자동 생성 배포 툴 이용시 주의할 상수 마사지 추천정보 예약 절차</a>
+        <p class="post-item__summary">많은 분들이 마사지 예약 과정에서 실패를 경험하곤 하는데, 이는 보통 충분한 사전 정보 없이 무작정 방문하기 때문입니다. PBN 자동 생성 배포 툴 기술을 통해 수집된 광고성 정보에 휘둘려 예약하는</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0280.html">PBN 자동 생성 배포 툴 활용하여 망원 노래방 추천정보 확인하는 체크리스트</a>
+        <p class="post-item__summary">최근 디지털 마케팅의 영역에서 PBN 자동 생성 배포 툴 기술이 주목받고 있습니다. 이러한 도구를 통해 정보를 수집하는 방식은 로컬 상권의 데이터를 분석하는 데 도움을 주기도 합니다. 망원 지역에서</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0281.html">PBN 자동 생성 배포 툴 활용하여 홍대 노래방 추천정보 확인하기</a>
+        <p class="post-item__summary">친구들과 홍대 거리에서 즐거운 시간을 보내던 중, 갑작스러운 비를 피하고자 즉흥적으로 노래방을 찾았던 경험이 있습니다. 거리 곳곳에 입간판이 많아 선택이 어려웠는데, 익숙하지 않은 지역일수록 사전 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0282.html">PBN 자동 생성 배포 툴 분석으로 보는 공덕 셔츠룸 추천정보 가이드</a>
+        <p class="post-item__summary">많은 이들이 셔츠룸이라는 업종에 대해 단순히 부정적인 인식만을 가지고 있거나, 반대로 무조건적인 환상을 품는 등 극단적인 오해를 하는 경우가 많습니다. 하지만 이는 하나의 문화적 소비 형태일 뿐이며</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0283.html">PBN 자동 생성 배포 툴 데이터를 통한 연남 유흥 추천정보 확인법</a>
+        <p class="post-item__summary">성공적인 유흥을 위해서는 적절한 인원 구성, 쾌적한 공간의 확보, 그리고 투명한 비용 산출이라는 세 가지 충족 조건이 필수적입니다. 이 중 어느 하나라도 부족하면 전체적인 만족도가 급격히 하락하게 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0284.html">PBN 자동 생성 배포 툴 참고하여 마곡 가라오케 추천정보 업체 비교하기</a>
+        <p class="post-item__summary">혹시 업무를 마치고 동료들과 함께 보낼 장소를 찾으면서 어떤 기준으로 업체를 선택해야 할지 고민해 본 적이 있으십니까? 디지털 홍보 환경인 PBN 자동 생성 배포 툴 등을 통해 수많은 광고가 쏟아지</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0285.html">PBN 자동 생성 배포 툴 활용해서 마곡 유흥 추천정보 후기 신뢰성 판별</a>
+        <p class="post-item__summary">정보가 넘쳐나는 시대에 PBN 자동 생성 배포 툴 기술을 이용한 마케팅 사례가 빈번해지면서 올바른 정보를 판별하는 과정이 중요해졌습니다. 마곡 지역의 유흥 정보를 찾을 때도 정보의 출처와 후기의 진</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0286.html">PBN 자동 생성 배포 툴 이용 합정 노래방 추천정보 가격 판단 기준</a>
+        <p class="post-item__summary">많은 이들이 합정 인근에서 노래방을 선택할 때 가격과 가성비라는 두 가지 선택지를 놓고 고민에 빠지곤 합니다. 최신 마케팅 기법인 PBN 자동 생성 배포 툴 등을 통해 정보가 확산되는 만큼, 단순히</p>
+      </li>
+      </ul>
+    <nav class="pager">
+      <a class="pager__link" href="posts.html">1</a>
+      <span class="pager__current">2</span>
+    </nav>
+    </main>
+  </div>
+</body>
+</html>
